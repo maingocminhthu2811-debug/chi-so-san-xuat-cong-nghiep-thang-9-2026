@@ -1,0 +1,6 @@
+{
+  "name": "Infographic TPHCM: Chỉ số sản xuất công nghiệp 2026",
+  "description": "Trang web Infographic Tương tác (Interactive Animated Infographic) trực quan hóa báo cáo kinh tế và chỉ số sản xuất công nghiệp TPHCM năm 2026.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
