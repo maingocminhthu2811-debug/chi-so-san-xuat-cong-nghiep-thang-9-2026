@@ -1413,11 +1413,12 @@
       will-change: transform;
     }
 
-    /* 3D Flip Card System */
+    /* 3D Flip Card System with Mobile Responsiveness & Touch Optimization */
     .flip-card-stage {
       perspective: 1600px;
       min-height: 490px;
       display: flex;
+      width: 100%;
     }
     .flip-card-3d {
       position: relative;
@@ -1427,6 +1428,7 @@
       transform-style: preserve-3d;
       cursor: pointer;
       border-radius: 12px;
+      -webkit-tap-highlight-color: transparent;
     }
     .flip-card-3d.is-flipped {
       transform: rotateY(180deg);
@@ -1443,7 +1445,19 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      overflow: hidden;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(2, 132, 199, 0.3) transparent;
+    }
+    .flip-card-face::-webkit-scrollbar {
+      width: 4px;
+    }
+    .flip-card-face::-webkit-scrollbar-thumb {
+      background: rgba(2, 132, 199, 0.25);
+      border-radius: 4px;
     }
     .flip-card-face-front {
       transform: rotateY(0deg);
@@ -1466,29 +1480,177 @@
       margin-top: auto;
       box-sizing: border-box;
       text-align: center;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
     }
-    .flip-hint-pill:hover {
+    .flip-hint-pill:hover, .flip-hint-pill:active {
       transform: translateY(-1px);
       filter: brightness(1.08);
     }
+
+    /* =====================================================================
+       RESPONSIVE DESIGN CHO MỌI THIẾT BỊ (TABLET, MOBILE, IPAD, SMALL PHONES)
+       ===================================================================== */
     @media (max-width: 1100px) {
       .task-grid-10, .task-grid-8 {
         grid-template-columns: repeat(3, 1fr) !important;
       }
     }
+
+    @media (max-width: 950px) {
+      .iip-dashboard-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+      }
+    }
+
     @media (max-width: 768px) {
-      .task-grid-10, .task-grid-8 {
+      body {
+        overflow-x: hidden;
+      }
+      .dashboard-container {
+        padding: 0 0.65rem !important;
+        margin: 0.85rem auto 3rem auto !important;
+        gap: 1.15rem !important;
+      }
+      .slide-board {
+        padding: 1.25rem 0.85rem !important;
+        border-radius: 14px !important;
+      }
+      .slide-main-heading {
+        font-size: clamp(1.05rem, 4.2vw, 1.45rem) !important;
+        gap: 0.5rem !important;
+      }
+      .slide-badge-circle {
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 0.75rem !important;
+      }
+
+      /* Hero Slide Mobile */
+      .hero-slide {
+        aspect-ratio: auto !important;
+        min-height: 320px !important;
+        max-height: none !important;
+        padding: 2.2rem 0.85rem !important;
+        border-radius: 14px !important;
+      }
+      .city-badge-pill {
+        font-size: clamp(1.2rem, 5.2vw, 1.85rem) !important;
+        padding: 0.45rem 1.4rem !important;
+        letter-spacing: 0.1em !important;
+      }
+      .hero-cluster-topic {
+        font-size: clamp(1.35rem, 5.8vw, 2.35rem) !important;
+        line-height: 1.22 !important;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8) !important;
+      }
+      .hero-cluster-bottom {
+        gap: 0.5rem !important;
+        margin-top: 0.25rem !important;
+      }
+      .hero-cluster-growth {
+        font-size: clamp(0.9rem, 3.8vw, 1.35rem) !important;
+        padding: 0.45rem 0.85rem !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        text-align: center !important;
+      }
+      .hero-cluster-growth .metric-spotlight {
+        font-size: 1.25em !important;
+      }
+
+      /* Thẻ lật 3D trên Mobile */
+      .flip-card-stage, .flip-card-3d {
+        min-height: 480px;
+      }
+      #flip-card-muc-2 {
+        min-height: 570px !important;
+      }
+      #flip-card-muc-3 {
+        min-height: 610px !important;
+      }
+      #flip-card-muc-4 {
+        min-height: 640px !important;
+      }
+      .flip-card-stage[style] {
+        min-height: auto !important;
+      }
+
+      /* Lưới 2 cột chuyển thành 1 cột */
+      .trade-grid-2 {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+      }
+      .task-grid-10 {
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important;
       }
     }
-    @media (max-width: 480px) {
-      .task-grid-10, .task-grid-8 {
-        grid-template-columns: 1fr !important;
-      }
-    }
+
     @media (max-width: 640px) {
-      .task-grid-8 {
+      .trinity-blocks-row {
+        flex-direction: column !important;
+        gap: 0.4rem !important;
+      }
+      .trinity-arrow {
+        transform: rotate(90deg);
+        display: inline-block;
+        font-size: 1.1rem !important;
+        margin: -2px 0;
+      }
+      .trinity-cube {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0.65rem 1rem !important;
+        font-size: 0.825rem !important;
+        text-align: center !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .dashboard-container {
+        padding: 0 0.5rem !important;
+        gap: 0.85rem !important;
+      }
+      .slide-board {
+        padding: 1rem 0.65rem !important;
+      }
+      .hero-slide {
+        padding: 1.75rem 0.65rem !important;
+        min-height: 280px !important;
+      }
+      .city-badge-pill {
+        font-size: clamp(1.1rem, 5.5vw, 1.5rem) !important;
+        padding: 0.35rem 1.1rem !important;
+      }
+      .hero-cluster-topic {
+        font-size: clamp(1.15rem, 5.6vw, 1.65rem) !important;
+      }
+      .hero-cluster-growth {
+        font-size: clamp(0.78rem, 3.6vw, 1.05rem) !important;
+        padding: 0.35rem 0.65rem !important;
+      }
+      #flip-card-iip-general {
+        min-height: 500px !important;
+      }
+      #flip-card-iip-mechanical {
+        min-height: 510px !important;
+      }
+      #flip-card-muc-2 {
+        min-height: 640px !important;
+      }
+      #flip-card-muc-3 {
+        min-height: 690px !important;
+      }
+      #flip-card-muc-4 {
+        min-height: 730px !important;
+      }
+      .task-grid-10 {
         grid-template-columns: 1fr !important;
+      }
+      .flip-card-face {
+        padding: 1rem 0.75rem !important;
       }
     }
   </style>
@@ -2397,6 +2559,33 @@ Trong các tháng cuối năm 2026, ngành Công Thương sẽ mở rộng tổn
         mouse.targetX = -1000;
         mouse.targetY = -1000;
       });
+
+      // Hỗ trợ tương tác cảm ứng trên Mobile (Touch interaction)
+      heroSlide.addEventListener('touchstart', (e) => {
+        if (e.touches && e.touches.length > 0) {
+          const rect = heroSlide.getBoundingClientRect();
+          mouse.targetX = e.touches[0].clientX - rect.left;
+          mouse.targetY = e.touches[0].clientY - rect.top;
+          mouse.isHovered = true;
+        }
+      }, { passive: true });
+
+      heroSlide.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches.length > 0) {
+          const rect = heroSlide.getBoundingClientRect();
+          mouse.targetX = e.touches[0].clientX - rect.left;
+          mouse.targetY = e.touches[0].clientY - rect.top;
+          mouse.isHovered = true;
+        }
+      }, { passive: true });
+
+      heroSlide.addEventListener('touchend', () => {
+        setTimeout(() => {
+          mouse.isHovered = false;
+          mouse.targetX = -1000;
+          mouse.targetY = -1000;
+        }, 1200);
+      }, { passive: true });
 
       // Tạo 75 hạt tăng trưởng kinh tế phát sáng bay lên
       const particleCount = 75;
