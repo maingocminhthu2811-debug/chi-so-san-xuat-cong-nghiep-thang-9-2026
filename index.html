@@ -1715,23 +1715,17 @@
 
       <!-- Khối tiêu đề nhấn nhá theo 4 cụm nổi bật: [TPHCM] [CHỈ SỐ SẢN XUẤT CÔNG NGHIỆP] [NĂM 2026 DỰ KIẾN] [TĂNG 12,2%] -->
       <div class="hero-content-wrapper">
-        <!-- Cụm 1: [TPHCM] (Viết tắt, bỏ chấm, to hơn 3 size) -->
-        <div class="hero-cluster-city">
-          <span class="city-badge-pill">TPHCM</span>
-        </div>
+        
 
-        <!-- Cụm 2: [CHỈ SỐ SẢN XUẤT CÔNG NGHIỆP] (In hoa tất cả, bold đậm nét) -->
-        <h1 class="hero-cluster-topic">
-          CHỈ SỐ SẢN XUẤT CÔNG NGHIỆP
+        <!-- Tiêu đề 3 dòng: [NHỮNG CON SỐ TÍCH CỰC] (+1 size), [CỦA] (+1 size), [NGÀNH CÔNG THƯƠNG TPHCM] (-1 size + nền xanh mờ) -->
+        <h1 style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.5rem; margin: 0; width: 100%;">
+          <!-- Line 1: [NHỮNG CON SỐ TÍCH CỰC ] tăng 1 size, màu xanh nổi bật -->
+          <span style="color: #00f0ff; font-size: clamp(1.4rem, 3.2vw, 2.4rem); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; text-shadow: 0 0 20px rgba(0, 240, 255, 0.8), 0 2px 10px rgba(0,0,0,0.8);">NHỮNG CON SỐ TÍCH CỰC</span>
+          <!-- Line 2: [CỦA] tăng 1 size -->
+          <span style="color: #e2e8f0; font-size: clamp(0.95rem, 2.0vw, 1.35rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; opacity: 0.95; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">CỦA</span>
+          <!-- Line 3: [NGÀNH CÔNG THƯƠNG TPHCM] giảm 1 size, nền xanh mờ -->
+          <span style="color: #ffffff; font-size: clamp(1.6rem, 4.0vw, 3.0rem); font-weight: 900; text-transform: uppercase; letter-spacing: 0.03em; line-height: 1.15; background: rgba(0, 240, 255, 0.15); border: 1.5px solid rgba(0, 240, 255, 0.45); border-radius: 12px; padding: 0.45rem 1.4rem; backdrop-filter: blur(10px); box-shadow: 0 4px 24px rgba(0, 240, 255, 0.25), inset 0 0 15px rgba(0, 240, 255, 0.15); text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 240, 255, 0.6);">NGÀNH CÔNG THƯƠNG TPHCM</span>
         </h1>
-
-        <!-- Cụm 3 & Cụm 4: [NĂM 2026 DỰ KIẾN] đứng trước [TĂNG 12,2%], tăng 1 size và bold -->
-        <div class="hero-cluster-bottom">
-          <span class="hero-cluster-growth">
-            <span>NĂM 2026 DỰ KIẾN TĂNG</span>
-            <span class="metric-spotlight metric-counter tabular-nums" data-target="12.2" data-decimals="1" data-suffix="%">12,2%</span>
-          </span>
-        </div>
       </div>
     </section>
 
@@ -1770,9 +1764,7 @@
                 <div style="font-size: 1.15rem; font-weight: 800; color: var(--c-navy); margin-bottom: 0.25rem;">
                   Chỉ số IIP
                 </div>
-                <div style="font-size: 0.78rem; color: var(--c-text-muted);">
-                  So sánh tiến độ tăng trưởng 2025 và 2026
-                </div>
+                
               </div>
 
               <!-- Nhóm 1: 9 tháng đầu năm (6,9% vs 11,1%) -->
@@ -1838,7 +1830,7 @@
                 <!-- Đoạn 2: Cả năm -->
                 <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid var(--c-cyan); border-radius: 8px; padding: 1rem 1.15rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
                   <p style="font-size: 0.95rem; color: #1e293b; line-height: 1.6; margin: 0;">
-                    IIP cả năm 2026 ước tăng khoảng <strong style="color: #0284c7; font-weight: 800; font-family: var(--font-mono);">12,2%</strong> (năm 2025 tăng <strong style="color: #0284c7; font-weight: 800; font-family: var(--font-mono);">8,9%</strong>).
+                    IIP cả năm 2026 ước tăng khoảng <strong style="color: #0284c7; font-weight: 800; font-family: var(--font-mono);">12,2%</strong> (cùng kỳ năm 2025 tăng <strong style="color: #0284c7; font-weight: 800; font-family: var(--font-mono);">8,9%</strong>).
                   </p>
                 </div>
               </div>
@@ -1859,7 +1851,7 @@
             <!-- MẶT TRƯỚC: SỐ LIỆU TRỰC QUAN NỀN TRẮNG TINH TẾ ĐỒNG BỘ -->
             <div class="flip-card-face flip-card-face-front" style="background: #ffffff; border: 1px solid var(--c-border); border-radius: 12px; padding: 1.5rem; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
               <div>
-                <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--c-navy); margin-bottom: 0.2rem;"></h3>
+                <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--c-navy); margin-bottom: 0.2rem;">Ngành Cơ Khí</h3>
                 <p style="font-size: 0.78rem; color: var(--c-text-muted); line-height: 1.35;"><strong>Ngành Cơ khí </strong>dẫn đầu tốc độ tăng trưởng</p>
               </div>
 
@@ -1879,32 +1871,9 @@
                 </div>
               </div>
 
-              <!-- 3 Hàng động lực có icon -->
-              <div style="display: flex; flex-direction: column; gap: 0.45rem;">
-                <!-- Row 1: Nhu cầu máy móc -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.55rem 0.8rem; display: flex; align-items: center; gap: 0.7rem;">
-                  <div style="width: 26px; height: 26px; border-radius: 6px; background: #e0f2fe; display: flex; align-items: center; justify-content: center; color: #0284c7; flex-shrink: 0;">
-                    <svg class="industrial-spin-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-                  </div>
-                  <div style="font-size: 0.8rem; color: #1e293b; font-weight: 700;">Nhu cầu máy móc</div>
-                </div>
-
-                <!-- Row 2: Tự động hóa -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.55rem 0.8rem; display: flex; align-items: center; gap: 0.7rem;">
-                  <div style="width: 26px; height: 26px; border-radius: 6px; background: #e0f2fe; display: flex; align-items: center; justify-content: center; color: #0284c7; flex-shrink: 0;">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                  </div>
-                  <div style="font-size: 0.8rem; color: #1e293b; font-weight: 700;">Tự động hóa</div>
-                </div>
-
-                <!-- Row 3: Tham gia chuỗi cung ứng FDI -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.55rem 0.8rem; display: flex; align-items: center; gap: 0.7rem;">
-                  <div style="width: 26px; height: 26px; border-radius: 6px; background: #e0f2fe; display: flex; align-items: center; justify-content: center; color: #0284c7; flex-shrink: 0;">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                  </div>
-                  <div style="font-size: 0.8rem; color: #1e293b; font-weight: 700;">Tham gia chuỗi cung ứng FDI</div>
-                </div>
-              </div>
+              <div style="border-top: 1px dashed #e2e8f0; padding-top: 0.65rem; font-size: 0.78rem; font-weight: 700; color: #0284c7; display: flex; align-items: center; gap: 0.35rem;">
+                      <span>★</span> <span>Nhờ nhu cầu máy móc, tự động hóa và tham gia chuỗi cung ứng FDI</span>
+                    </div>
 
               <!-- Thanh nút lật thẻ -->
               <div class="flip-hint-pill" style="background: #f8fafc; color: var(--c-navy); border: 1px dashed var(--c-blue);">
@@ -1970,14 +1939,14 @@
                   </div>
                 </div>
 
-                <!-- 2 Thẻ dưới: Bán lẻ hàng hóa & Tổng quan đánh giá -->
-                <div class="trade-grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <!-- Thẻ dưới: Trong đó, doanh thu bán lẻ hàng hóa -->
+                <div class="trade-grid-2" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
                   <!-- Div 2: Doanh thu Bán lẻ hàng hóa -->
                   <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
                     <div>
                       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
                         <span style="background: #e0f2fe; color: #0284c7; font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.6rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.03em;">
-                          DOANH THU BÁN LẺ HÀNG HÓA
+                          TRONG ĐÓ, DOANH THU BÁN LẺ HÀNG HÓA
                         </span>
                         <div style="width: 30px; height: 30px; border-radius: 6px; background: #e0f2fe; color: #0284c7; display: flex; align-items: center; justify-content: center;">
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
@@ -1990,33 +1959,6 @@
                         <span>▲ Tăng khoảng <span class="metric-counter" data-target="17.2" data-suffix="%">17,2%</span> so với cùng kỳ</span>
                       </div>
                     </div>
-                    
-                  </div>
-
-                  <!-- Div 3: Tổng quan đánh giá -->
-                  <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                    <div>
-                      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                        
-                        <div style="width: 30px; height: 30px; border-radius: 6px; background: #ecfdf5; color: #059669; display: flex; align-items: center; justify-content: center;">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-                        </div>
-                      </div>
-                      <div style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-bottom: 0.4rem; line-height: 1.35;">
-                        Hoạt động thương mại - dịch vụ 9 tháng năm 2026 có nhiều yếu tố tích cực
-                      </div>
-                      <div style="display: flex; flex-direction: column; gap: 0.35rem;">
-                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 0.4rem 0.7rem; display: flex; justify-content: space-between; align-items: center;">
-                          <span style="font-size: 0.75rem; font-weight: 600; color: #475569;">Doanh thu thương mại dịch vụ:</span>
-                          <span style="font-size: 0.85rem; font-weight: 800; font-family: var(--font-mono); color: #0284c7;">Tăng <span class="metric-counter" data-target="13.8" data-suffix="%">13,8%</span></span>
-                        </div>
-                        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 4px; padding: 0.4rem 0.7rem; display: flex; justify-content: space-between; align-items: center;">
-                          <span style="font-size: 0.75rem; font-weight: 700; color: #166534;">Doanh thu bán lẻ hàng hóa:</span>
-                          <span style="font-size: 0.85rem; font-weight: 800; font-family: var(--font-mono); color: #059669;">Tăng <span class="metric-counter" data-target="17.2" data-suffix="%">17,2%</span></span>
-                        </div>
-                      </div>
-                    </div>
-                    
                   </div>
                 </div>
               </div>
@@ -2248,7 +2190,7 @@
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
                     </div>
                   </div>
-                  <div style="font-size: 0.825rem; font-weight: 800; color: #0f172a; line-height: 1.3;">Hiệu quả hoạt động thương mại - dịch vụ</div>
+                  <div style="font-size: 0.825rem; font-weight: 800; color: #0f172a; line-height: 1.3;">Nâng cao hiệu quả hoạt động thương mại - dịch vụ</div>
                 </div>
 
                 <!-- Card 04: Thúc đẩy xuất nhập khẩu -->
