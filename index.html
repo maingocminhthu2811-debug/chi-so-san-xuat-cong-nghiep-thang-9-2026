@@ -457,18 +457,22 @@
     }
 
     .hero-cluster-growth .metric-spotlight {
+      color: #00f0ff;
       background: linear-gradient(135deg, #ffffff 0%, #00f0ff 35%, #38bdf8 70%, #4ade80 100%);
       background-size: 200% 100%;
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       font-family: 'Unbounded', 'Montserrat', 'Arial Black', Impact, sans-serif;
       font-weight: 900;
       font-size: 1.35em;
       letter-spacing: -0.02em;
-      filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.95)) drop-shadow(0 0 35px rgba(74, 222, 128, 0.8));
+      text-shadow: 0 0 16px rgba(0, 240, 255, 0.7);
+      filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.95)) drop-shadow(0 0 30px rgba(74, 222, 128, 0.8));
       animation: metricPulseGlow 2.5s ease-in-out infinite;
       display: inline-block;
       vertical-align: baseline;
+      min-width: 3.2ch;
     }
 
     @keyframes metricPulseGlow {
@@ -1416,7 +1420,6 @@
     /* 3D Flip Card System with Mobile Responsiveness & Touch Optimization */
     .flip-card-stage {
       perspective: 1600px;
-      min-height: 490px;
       display: flex;
       width: 100%;
     }
@@ -1429,6 +1432,18 @@
       cursor: pointer;
       border-radius: 12px;
       -webkit-tap-highlight-color: transparent;
+    }
+    #flip-card-iip-general, #flip-card-iip-mechanical {
+      min-height: 490px;
+    }
+    #flip-card-muc-2 {
+      min-height: 520px;
+    }
+    #flip-card-muc-3 {
+      min-height: 540px;
+    }
+    #flip-card-muc-4 {
+      min-height: 540px;
     }
     .flip-card-3d.is-flipped {
       transform: rotateY(180deg);
@@ -1445,19 +1460,6 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      overflow-y: auto;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior: contain;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(2, 132, 199, 0.3) transparent;
-    }
-    .flip-card-face::-webkit-scrollbar {
-      width: 4px;
-    }
-    .flip-card-face::-webkit-scrollbar-thumb {
-      background: rgba(2, 132, 199, 0.25);
-      border-radius: 4px;
     }
     .flip-card-face-front {
       transform: rotateY(0deg);
@@ -1471,13 +1473,13 @@
       gap: 0.4rem;
       font-size: 0.725rem;
       font-weight: 700;
-      padding: 0.45rem 0.85rem;
+      padding: 0.5rem 0.85rem;
       border-radius: 6px;
       cursor: pointer;
       transition: all 0.2s ease;
       width: 100%;
       justify-content: center;
-      margin-top: auto;
+      margin-top: 1rem;
       box-sizing: border-box;
       text-align: center;
       user-select: none;
@@ -1527,12 +1529,12 @@
         font-size: 0.75rem !important;
       }
 
-      /* Hero Slide Mobile */
+      /* Hero Slide Mobile: Đảm bảo số 12,2% luôn hiển thị rực rỡ và không bị che khuất */
       .hero-slide {
         aspect-ratio: auto !important;
-        min-height: 320px !important;
+        min-height: 280px !important;
         max-height: none !important;
-        padding: 2.2rem 0.85rem !important;
+        padding: 2rem 0.85rem !important;
         border-radius: 14px !important;
       }
       .city-badge-pill {
@@ -1548,39 +1550,92 @@
       .hero-cluster-bottom {
         gap: 0.5rem !important;
         margin-top: 0.25rem !important;
+        width: 100% !important;
+        justify-content: center !important;
       }
       .hero-cluster-growth {
-        font-size: clamp(0.9rem, 3.8vw, 1.35rem) !important;
-        padding: 0.45rem 0.85rem !important;
-        flex-wrap: wrap !important;
+        font-size: clamp(0.85rem, 3.6vw, 1.25rem) !important;
+        padding: 0.5rem 0.9rem !important;
+        display: inline-flex !important;
+        align-items: center !important;
         justify-content: center !important;
-        text-align: center !important;
+        flex-wrap: wrap !important;
+        gap: 0.4rem !important;
+        line-height: 1.3 !important;
+        max-width: 100% !important;
       }
       .hero-cluster-growth .metric-spotlight {
-        font-size: 1.25em !important;
+        color: #00f0ff !important;
+        -webkit-text-fill-color: #00f0ff !important;
+        background: none !important;
+        font-size: 1.3em !important;
+        font-weight: 900 !important;
+        text-shadow: 0 0 16px rgba(0, 240, 255, 0.95), 0 0 32px rgba(74, 222, 128, 0.85) !important;
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        min-width: auto !important;
       }
 
-      /* Thẻ lật 3D trên Mobile */
-      .flip-card-stage, .flip-card-3d {
-        min-height: 480px;
-      }
-      #flip-card-muc-2 {
-        min-height: 570px !important;
-      }
-      #flip-card-muc-3 {
-        min-height: 610px !important;
-      }
+      /* BẢN MOBI: Hiển thị trọn vẹn toàn bộ nội dung (Mục 1, 2, 3, 4) - TỰ ĐỘNG GIÃN CHIỀU CAO THẬT, KHÔNG CẮT, KHÔNG CẦN CUỘN TRONG */
+      .flip-card-stage, 
+      .flip-card-3d,
+      #flip-card-iip-general, 
+      #flip-card-iip-mechanical, 
+      #flip-card-muc-2, 
+      #flip-card-muc-3, 
       #flip-card-muc-4 {
-        min-height: 640px !important;
-      }
-      .flip-card-stage[style] {
+        height: auto !important;
         min-height: auto !important;
+        max-height: none !important;
+        perspective: none !important;
+        transform-style: flat !important;
+        transform: none !important;
+        position: relative !important;
+        display: block !important;
+        overflow: visible !important;
+      }
+
+      .flip-card-face {
+        position: relative !important;
+        inset: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        backface-visibility: visible !important;
+        -webkit-backface-visibility: visible !important;
+        transform: none !important;
+        padding: 1.25rem 1rem !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Chuyển đổi mặt trước / mặt sau mượt mà trên mobile */
+      .flip-card-3d:not(.is-flipped) .flip-card-face-front {
+        display: flex !important;
+      }
+      .flip-card-3d:not(.is-flipped) .flip-card-face-back {
+        display: none !important;
+      }
+
+      .flip-card-3d.is-flipped .flip-card-face-front {
+        display: none !important;
+      }
+      .flip-card-3d.is-flipped .flip-card-face-back {
+        display: flex !important;
+        animation: mobileCardFadeIn 0.3s ease-out;
+      }
+
+      @keyframes mobileCardFadeIn {
+        from { opacity: 0; transform: translateY(6px); }
+        to { opacity: 1; transform: translateY(0); }
       }
 
       /* Lưới 2 cột chuyển thành 1 cột */
       .trade-grid-2 {
         grid-template-columns: 1fr !important;
-        gap: 0.75rem !important;
+        gap: 0.85rem !important;
       }
       .task-grid-10 {
         grid-template-columns: repeat(2, 1fr) !important;
@@ -1618,7 +1673,7 @@
       }
       .hero-slide {
         padding: 1.75rem 0.65rem !important;
-        min-height: 280px !important;
+        min-height: 260px !important;
       }
       .city-badge-pill {
         font-size: clamp(1.1rem, 5.5vw, 1.5rem) !important;
@@ -1630,21 +1685,6 @@
       .hero-cluster-growth {
         font-size: clamp(0.78rem, 3.6vw, 1.05rem) !important;
         padding: 0.35rem 0.65rem !important;
-      }
-      #flip-card-iip-general {
-        min-height: 500px !important;
-      }
-      #flip-card-iip-mechanical {
-        min-height: 510px !important;
-      }
-      #flip-card-muc-2 {
-        min-height: 640px !important;
-      }
-      #flip-card-muc-3 {
-        min-height: 690px !important;
-      }
-      #flip-card-muc-4 {
-        min-height: 730px !important;
       }
       .task-grid-10 {
         grid-template-columns: 1fr !important;
@@ -1687,10 +1727,9 @@
 
         <!-- Cụm 3 & Cụm 4: [NĂM 2026 DỰ KIẾN] đứng trước [TĂNG 12,2%], tăng 1 size và bold -->
         <div class="hero-cluster-bottom">
-          
           <span class="hero-cluster-growth">
             <span>NĂM 2026 DỰ KIẾN TĂNG</span>
-            <span class="metric-spotlight tabular-nums"><span class="metric-counter" data-target="12.2" data-decimals="1" data-suffix="%">12,2%</span></span>
+            <span class="metric-spotlight metric-counter tabular-nums" data-target="12.2" data-decimals="1" data-suffix="%">12,2%</span>
           </span>
         </div>
       </div>
@@ -1908,8 +1947,8 @@
       </div>
 
       <!-- 1 THẺ LẬT 3D TƯƠNG TÁC MỤC 2: MẶT TRƯỚC SỐ LIỆU, MẶT SAU VĂN BẢN -->
-      <div class="flip-card-stage" style="min-height: 520px;">
-        <div class="flip-card-3d" id="flip-card-muc-2" onclick="this.classList.toggle('is-flipped')" tabindex="0" role="button" aria-label="Lật thẻ Thương mại Dịch vụ" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('is-flipped');}" style="min-height: 520px;">
+      <div class="flip-card-stage">
+        <div class="flip-card-3d" id="flip-card-muc-2" onclick="this.classList.toggle('is-flipped')" tabindex="0" role="button" aria-label="Lật thẻ Thương mại Dịch vụ" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('is-flipped');}">
           
           <!-- MẶT TRƯỚC (SỐ LIỆU): GỒM 3 DIV PHÍA DƯỚI (TỔNG DOANH THU, BÁN LẺ HÀNG HÓA, TỔNG QUAN ĐÁNH GIÁ) -->
           <div class="flip-card-face flip-card-face-front" style="background: #ffffff; border: 1px solid var(--c-border); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
@@ -2032,8 +2071,8 @@
       </div>
 
       <!-- 1 THẺ LẬT 3D TƯƠNG TÁC MỤC 3: MẶT TRƯỚC SỐ LIỆU, MẶT SAU VĂN BẢN -->
-      <div class="flip-card-stage" style="min-height: 540px;">
-        <div class="flip-card-3d" id="flip-card-muc-3" onclick="this.classList.toggle('is-flipped')" tabindex="0" role="button" aria-label="Lật thẻ Xuất Nhập Khẩu" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('is-flipped');}" style="min-height: 540px;">
+      <div class="flip-card-stage">
+        <div class="flip-card-3d" id="flip-card-muc-3" onclick="this.classList.toggle('is-flipped')" tabindex="0" role="button" aria-label="Lật thẻ Xuất Nhập Khẩu" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('is-flipped');}">
           
           <!-- MẶT TRƯỚC (SỐ LIỆU): GỒM 3 DIV PHÍA DƯỚI (TỔNG KIM NGẠCH, XUẤT KHẨU, NHẬP KHẨU) -->
           <div class="flip-card-face flip-card-face-front" style="background: #ffffff; border: 1px solid var(--c-border); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
@@ -2166,8 +2205,8 @@
       </div>
 
       <!-- 1 THẺ LẬT 3D TƯƠNG TÁC MỤC 4: MẶT TRƯỚC HỆ SINH THÁI & MÔ HÌNH, MẶT SAU VĂN BẢN -->
-      <div class="flip-card-stage" style="min-height: 520px;">
-        <div class="flip-card-3d" id="flip-card-muc-4" onclick="this.classList.toggle('is-flipped')" tabindex="0" role="button" aria-label="Lật thẻ Nhiệm vụ Giải pháp" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('is-flipped');}" style="min-height: 520px;">
+      <div class="flip-card-stage">
+        <div class="flip-card-3d" id="flip-card-muc-4" onclick="this.classList.toggle('is-flipped')" tabindex="0" role="button" aria-label="Lật thẻ Nhiệm vụ Giải pháp" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('is-flipped');}">
           
           <!-- MẶT TRƯỚC (SỐ LIỆU / TRỰC QUAN): GỒM HỆ SINH THÁI 10 TRỌNG TÂM VÀ MÔ HÌNH LIÊN KẾT HỮU CƠ -->
           <div class="flip-card-face flip-card-face-front" style="background: #ffffff; border: 1px solid var(--c-border); border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
